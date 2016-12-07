@@ -1,25 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # To-Do API
+
+* Return JSON representations of users, lists, and items	(*ongoing*)
+* Authenticate user from the command line, using a username and password
+* Create new users, lists, and items from the command line
+* Remove users and lists from the command line
+* Update list and item attributes from the command line
