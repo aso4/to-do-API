@@ -1,25 +1,16 @@
 Rails.application.routes.draw do
-  get 'items/edit'
 
-  get 'items/index'
+  namespace :api do
+    get 'users/index'
+  end
 
-  get 'items/new'
+  resources :items
 
-  get 'items/show'
+  resources :lists
 
-  get 'lists/index'
-
-  get 'lists/create'
-
-  get 'lists/show'
-
-  get 'lists/new'
-
-  get 'lists/edit'
-
-  get 'lists/update'
-
-  get 'lists/destroy'
+  namespace :api, defaults: { format: :json } do
+    resources :users
+  end
 
   get 'users/index'
 
