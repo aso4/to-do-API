@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
 
-  attributes :id, :list_id, :desc
+  attributes :id, :name #change name to :desc and add :list_id
 
 end
