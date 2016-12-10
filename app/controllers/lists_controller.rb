@@ -14,6 +14,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params.require(:list).permit(:name))
-    #@list.user = current_user
+    @list.user = current_user
   end
 end
