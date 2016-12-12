@@ -1,7 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :email, :name
+  attributes :id, :email, :username
 
 end
-
-# .to_json not .as_json validates in rails console.

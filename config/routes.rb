@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    get 'users/index'
-  end
-
-  resources :items
-
-  resources :lists
-
   namespace :api, defaults: { format: :json } do
     resources :users
+    resources :lists do
+      resources :items
+    end
   end
 
   get 'users/index'
