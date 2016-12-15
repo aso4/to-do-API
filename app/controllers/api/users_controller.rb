@@ -17,10 +17,18 @@ class Api::UsersController < ApiController
     end
   end
 
+  def destroy
+    begin
+      user = User.find(params[:id])
+      user.destroy
+      render json: {}, status: :no_content
+    rescue ActiveRecord::RecordNotFound
+      render :json => {}, :status => :not_found
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password)
   end
 end
-
-# curl -u test2:123456 -d "list[name]=Things to do today" -d "list[permissions]=private" http://localhost:3000/api/users/1/lists

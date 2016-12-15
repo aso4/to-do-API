@@ -1,8 +1,6 @@
 class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  #respond_to :json #removed due to rails 5.0
-
   private
 
   def permission_denied_error
