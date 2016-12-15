@@ -1,4 +1,4 @@
-class ListsController < ApplicationController
+class ListsController < ApiController
   def edit
   end
 
