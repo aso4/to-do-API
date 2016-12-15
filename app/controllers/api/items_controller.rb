@@ -1,19 +1,18 @@
-class ItemsController < ApiController
-  def edit
-  end
-
-  def index
-  end
-
-  def new
-    @item = Item.new
-  end
+class Api::ItemsController < ApiController
+  before_action :authenticated?
 
   def create
-    @item = Item.new(params.require(:list).permit(:name))
-    #@item.user = current_user
+    item = Item.new(item_params)
+    if item.save
+      render json: item
+    else
+      render json: { errors: item.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
-  def show
+  private
+
+  def item_params
+    params.require(:item).permit(:desc)
   end
 end

@@ -1,19 +1,22 @@
-class ListsController < ApiController
-  def edit
-  end
+class Api::ListsController < ApiController
+  before_action :authenticated?
 
-  def index
-  end
-
-  def show
-  end
-
-  def new
-    @list = List.new
-  end
+  # def new
+  #   @list = List.new
+  # end
 
   def create
-    @list = List.new(params.require(:list).permit(:name))
-    @list.user = current_user
+    list = List.new(list_params)
+    if list.save
+      render json: list
+    else
+      render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:name, :permissions)
   end
 end
