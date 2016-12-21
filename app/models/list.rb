@@ -5,4 +5,9 @@ class List < ApplicationRecord
 
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true
 
+  validates :permissions, presence: true
+
+  before_save { self.permissions ||= :hidden }
+
+  enum permissions: [:hidden, :viewable, :open]
 end
