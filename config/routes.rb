@@ -5,13 +5,13 @@ Rails.application.routes.draw do
       resources :lists
     end
 
-    resources :lists, only: [:update]
+    resources :lists, only: [:update, :index, :show]
 
     resources :lists, only: [] do
       resources :items, only: [:create]
     end
 
-    resources :items, only: [:destroy, :update]
+    resources :items, only: [:destroy, :update, :index]
   end
 
   get 'users/index'

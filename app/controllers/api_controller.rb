@@ -16,9 +16,12 @@ class ApiController < ApplicationController
     render json: response.to_json, status: status
   end
 
+  # check if the list being modified is owned by the authenticated user
   def authenticated?
     authenticate_or_request_with_http_basic do |username, password|
-      User.where( username: username, password: password).present?
+      user = User.where( username: username, password: password)
+      list = List.where( user: user )
+      user.present? && list.present?
     end
   end
 end
