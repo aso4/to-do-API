@@ -22,11 +22,12 @@ curl -u username:password -X DELETE http://localhost:3000/api/users/1/
 curl -u username:password -X DELETE http://localhost:3000/api/users/1/lists/1
 ```
 
-* Update list and item attributes from the command line. Updates with permissions that are not private, viewable, or open are rejected(*ongoing*)
+* Update list and item attributes from the command line. Updates with permissions that are not private, viewable, or open are rejected
 
 ```
 curl -X PUT -u username:password -d "list[permissions]=open" http://localhost:3000/api/lists/1
 curl -X PUT -u username:password -d "item[completed]=true" http://localhost:3000/api/items/1
 ```
 
-curl -X PUT -u test2:123456 -d "list[permissions]=hidden" http://localhost:3000/api/lists/5
+* Prevent a user from modifying other users' lists or items
+* Add index methods to the API for lists and items
