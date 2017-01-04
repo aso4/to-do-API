@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe ListsController, type: :controller do
+RSpec.describe Api::ListsController, type: :controller do
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get 'api/lists/:id/:edit'
       expect(response).to have_http_status(:success)
     end
   end
