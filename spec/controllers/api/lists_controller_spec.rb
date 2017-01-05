@@ -2,9 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Api::ListsController, type: :controller do
 
-  describe "GET #edit" do
+  let(:my_user) { create(:user) }
+  let(:my_list) { my_user.lists.first }
+
+  include AuthHelper
+  before(:each) do
+    http_login(my_user.username, my_user.password)
+  end
+
+  describe "POST #update" do
     it "returns http success" do
-      get 'api/lists/:id/:edit'
+      post :update, {user_id: my_user.id, id: my_list.id, list: {name: 'newname'}}
       expect(response).to have_http_status(:success)
     end
   end
