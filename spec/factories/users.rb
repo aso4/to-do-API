@@ -1,6 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    email "MyString"
+    username "MyString"
+    password "MyString"
+
+    after(:create) do |user, evaluator|
+      create_list(:list, 1, user: user)
+    end
   end
 end
