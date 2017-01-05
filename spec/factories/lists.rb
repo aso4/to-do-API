@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :list do
-    name "MyString"
+    name "MyList"
     permissions "open"
   end
 end

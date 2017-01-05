@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    username "MyString"
-    password "MyString"
+    username {Faker::Name.first_name}
+    password "password"
 
     after(:create) do |user, evaluator|
       create_list(:list, 1, user: user)
