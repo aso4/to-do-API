@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :item do
-    name "MyString"
+    desc "description"
+    completed false
+
   end
 end
