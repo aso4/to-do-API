@@ -3,6 +3,7 @@ class Api::ItemsController < ApiController
 
   def index
     item = Item.all
+    render json: item
   end
 
   def show
