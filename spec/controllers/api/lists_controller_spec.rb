@@ -22,7 +22,7 @@ RSpec.describe Api::ListsController, type: :controller do
     end
 
     it "creates a list with the correct attributes" do
-      post :create, {user_id: my_user.id, list: {name: 'MyString', permissions: 'open'}}
+      post :create, {user_id: my_user.id, list: {name: 'MyList', permissions: 'open'}}
       hashed_json = JSON.parse(response.body)
       expect(my_user.lists.first.name).to eq hashed_json["name"]
     end

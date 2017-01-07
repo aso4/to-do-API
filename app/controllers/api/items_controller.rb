@@ -33,6 +33,6 @@ class Api::ItemsController < ApiController
   private
 
   def item_params
-    params.require(:item).permit(:desc, :completed)
+    params.permit(:desc, :completed)
   end
 end
