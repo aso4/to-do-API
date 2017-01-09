@@ -33,4 +33,11 @@ RSpec.describe Api::UsersController, type: :controller do
       expect(JSON.parse(response.body)).to eq(json_data)
     end
   end
+
+  describe "DELETE #destroy" do
+    it "deletes the user" do
+      delete :destroy, { id: user1.id }
+      expect(response).to have_http_status(:no_content)
+    end
+  end
 end
