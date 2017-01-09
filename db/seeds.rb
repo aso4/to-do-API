@@ -45,7 +45,7 @@ lists = List.all
 50.times do
     Item.create!(
         desc: RandomData.random_words,
-        list: lists.sample,
+        list: List.last,
         completed: false
     )
 end

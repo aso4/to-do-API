@@ -2,8 +2,7 @@ class Api::ListsController < ApiController
   before_action :authenticated?
 
   def index
-    lists = List.all
-    render json: lists
+    list = List.all
   end
 
   def show
