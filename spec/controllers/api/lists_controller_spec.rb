@@ -49,4 +49,11 @@ RSpec.describe Api::ListsController, type: :controller do
     end
   end
 
+  describe "DELETE #destroy" do
+    it "deletes the list" do
+      delete :destroy, { user_id: my_user.id, id: my_list.id }
+      expect(response).to have_http_status(:no_content)
+    end
+  end
+
 end
