@@ -1,7 +1,8 @@
 # To-Do API
 
 * Return JSON representations of users, lists, and items
-* Authenticate user from the command line, using a username and password
+* Authenticate user from the command line, using a username and password.
+(for a partial list of valid usernames and passwords, navigate to the [db folder](https://github.com/aso4/to-do-API/tree/master/db))
 
 ```
 curl -u username:password https://aso4-todoapi.herokuapp.com/api/users/
